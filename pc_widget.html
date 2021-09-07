@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>pc-widget</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="pc_widget.css">
+  </head>
+  <body>
+    <form autocomplete = "off">
+      <label for="vertrekkantoor">Vertrekkantoor: </label>
+      <div class="autocomplete" style="width: 500px">
+        <select
+          id="vertrekkantoor"
+          name="vertrekkantoor"
+          onchange="changeVertrekkantoor()"
+          autocomplete="nope"
+        >
+          <option value="Leeg">-</option>
+          <option value="Antwerpen">Antwerpen</option>
+          <option value="Hasselt">Hasselt</option>
+          <option value="Destelbergen">Destelbergen</option>
+          <option value="Turnhout">Turnhout</option>
+          <option value="Kortrijk">Kortrijk</option>
+          <option value="Roeselare">Roeselare</option>
+          <option value="Leuven">Leuven</option>
+          <option value="Zellik">Zellik</option>
+          <option value="Mechelen">Mechelen</option>
+        </select>
+      </div>
+      <p style="margin: 20px"></p>
+
+      <div id="labelVertrekadres">Vertrekadres indien geen bestaand kantoor:</div>
+      <div class="autocomplete" style="width: 500px">
+        <input
+          id="origin"
+          type="text"
+          name="origin"
+          placeholder="postcode straat ..."
+          autocomplete="nope"
+        />
+      </div>
+      <div>Bestemming</div>
+      <div class="autocomplete" style="width: 500px">
+        <input
+          id="destination"
+          type="text"
+          name="destination"
+          placeholder="postcode straat ..."
+          autocorrect="off" spellcheck="false" readonly onfocus="this.removeAttribute('readonly');"
+        />
+      </div>
+
+      <div class = "transport" id="distance">Afstand:</div>
+
+      <div class = "transport"  id="duration">Verplaatsingstijd:</div>
+      
+      <label for="phone" style="height: 16px">Telefoon:</label>
+
+      <input type="tel" title="Begin met een 0 voor belgische nummers en met een + voor buitenlandse nummers" name="landlijn" id="landlijn" oninput="phoneFormat()" autocorrect="off" spellcheck="false" readonly onfocus="this.removeAttribute('readonly');">
+
+      <!-- <input type="submit"> -->
+    </form>
+
+    <script src="pc_widget.js" async defer></script>
+
+  </body>
+</html>
